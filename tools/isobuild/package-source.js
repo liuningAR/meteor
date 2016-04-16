@@ -1318,8 +1318,8 @@ _.extend(PackageSource.prototype, {
       const origNodeModulesStat = origNodeModulesDir &&
         files.statOrNull(origNodeModulesDir);
 
-      if (origNodeModulesDir &&
-          origNodeModulesDir.isDirectory()) {
+      if (origNodeModulesStat &&
+          origNodeModulesStat.isDirectory()) {
         sourceArch.localNodeModulesDirs["node_modules"] = {
           // Override these properties when calling
           // addNodeModulesDirectory in compileUnibuild.
